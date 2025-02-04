@@ -1,0 +1,49 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    color: white;
+    text-align: center;
+  }
+  
+  .parallax-section {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .first-section {
+    background-image: url('https://m.media-amazon.com/images/I/81GShRDhLPL._AC_UF1000,1000_QL80_.jpg');
+  }
+  
+  .second-section {
+    background-image: url('https://www.printwallpaper.net/wp-content/uploads/2022/02/MTN-025_autumn-season-mountain-fuji-kawaguchiko-lake-japan-1.jpg');
+  }
+  
+  .black-block {
+    height: 20vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .black-block .message {
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  .message h1, .message p {
+    margin: 0;
+    font-size: 4rem;
+  }
+  
+  .message p {
+    font-size: 1.5rem;
+  }
