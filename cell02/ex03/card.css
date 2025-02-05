@@ -36,7 +36,7 @@ h1 {
 }
 
 .login {
-  font-size: 18px;
+  font-size: 28px;
   font-weight: bold;
   color: #555;
   margin: 0;
@@ -45,6 +45,13 @@ h1 {
 .description {
   font-size: 14px;
   color: #777;
+  margin: 10px 0;
+}
+
+.kmitl {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
   margin: 10px 0;
 }
 
