@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .calculator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="leftInput" placeholder="Left operand">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightInput" placeholder="Right operand">
+        <button id="submitButton">Try me!</button>
+    </div>
+
+    <script>
+        function validateInput(left, right) {
+            return /^\d+$/.test(left) && /^\d+$/.test(right);
+        }
+
+        function calculate() {
+            const left = $('#leftInput').val();
+            const right = $('#rightInput').val();
+            const operator = $('#operator').val();
+
+            if (!validateInput(left, right)) {
+                alert('Error :(');
+                return;
+            }
+
+            const numLeft = parseInt(left, 10);
+            const numRight = parseInt(right, 10);
+
+            if ((operator === '/' || operator === '%') && numRight === 0) {
+                alert("It’s over 9000!");
+                console.log("It’s over 9000!");
+                return;
+            }
+
+            let result;
+            switch (operator) {
+                case '+':
+                    result = numLeft + numRight;
+                    break;
+                case '-':
+                    result = numLeft - numRight;
+                    break;
+                case '*':
+                    result = numLeft * numRight;
+                    break;
+                case '/':
+                    result = numLeft / numRight;
+                    break;
+                case '%':
+                    result = numLeft % numRight;
+                    break;
+                default:
+                    result = 'Invalid operator';
+            }
+
+            alert(`Result: ${result}`);
+            console.log(`Result: ${result}`);
+        }
+
+        $(document).ready(function() {
+            $('#submitButton').on('click', calculate);
+
+            setInterval(() => {
+                alert('Please, use me...');
+            }, 30000);
+        });
+    </script>
+</body>
+</html>
