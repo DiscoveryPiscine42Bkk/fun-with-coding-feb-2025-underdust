@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <link rel="stylesheet" href="backgroound.css">
+</head>
+<body>
+    <button id="changeColorButton">Click Me!</button>
+    <script>
+        let button = document.getElementById('changeColorButton');
+        let fontSize = 16;
+        
+        button.addEventListener('click', function() {
+            document.body.style.backgroundColor = `rgb(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`;
+            fontSize += 2;
+            button.style.fontSize = fontSize + 'px';
+        });
+    </script>
+</body>
+</html>
