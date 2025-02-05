@@ -17,8 +17,7 @@ function addTodo() {
     const todoText = prompt("Enter a new to-do:");
     if (todoText && todoText.trim() !== "") {
         const todoDiv = createTodo(todoText.trim());
-        const ftList = document.getElementById("ft_list");
-        ftList.prepend(todoDiv);
+        document.getElementById("ft_list").prepend(todoDiv);
         saveTodos();
     }
 }
@@ -28,18 +27,25 @@ function saveTodos() {
     document.querySelectorAll("#ft_list .todo").forEach(todo => {
         todos.push(todo.textContent);
     });
-    document.cookie = `todos=${JSON.stringify(todos)}; path=/; max-age=31536000`;
+
+    document.cookie = `todos=${encodeURIComponent(JSON.stringify(todos))}; path=/; max-age=31536000`;
 }
 
 function loadTodos() {
     const cookies = document.cookie.split("; ");
     const todoCookie = cookies.find(cookie => cookie.startsWith("todos="));
+
     if (todoCookie) {
-        const todos = JSON.parse(todoCookie.split("=")[1]);
-        todos.forEach(todoText => {
-            const todoDiv = createTodo(todoText);
-            document.getElementById("ft_list").appendChild(todoDiv);
-        });
+        try {
+            const todos = JSON.parse(decodeURIComponent(todoCookie.split("=")[1]));
+
+            todos.reverse().forEach(todoText => {
+                const todoDiv = createTodo(todoText);
+                document.getElementById("ft_list").prepend(todoDiv);
+            });
+        } catch (error) {
+            console.error("Error parsing cookie:", error);
+        }
     }
 }
 
