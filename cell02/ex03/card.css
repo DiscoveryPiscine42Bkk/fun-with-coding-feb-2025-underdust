@@ -1,4 +1,3 @@
-/* General Reset */
 body {
   margin: 0;
   padding: 0;
@@ -11,35 +10,31 @@ body {
   height: 100vh;
 }
 
-/* Title Outside the Card */
 h1 {
   font-size: 24px;
   color: #333;
   margin-bottom: 20px;
 }
 
-/* Card Container */
 .card {
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 0; /* เอาออกเพื่อให้รูปโปรไฟล์ครอบคลุมส่วนบน */
+  padding: 0;
   width: 250px;
   text-align: center;
-  position: relative; /* เพื่อให้ปุ่ม Contact อยู่ด้านล่างของการ์ด */
-  min-height: 400px; /* เพิ่มความสูงของการ์ด */
+  position: relative;
+  min-height: 400px;
 }
 
-/* Profile Picture */
 .profile-pic {
-  width: 100%; /* กว้างเต็มการ์ด */
-  height: 150px; /* กำหนดความสูงของรูปโปรไฟล์ */
-  object-fit: cover; /* ทำให้รูปครอบคลุมพื้นที่ */
-  border-radius: 10px 10px 0 0; /* มุมโค้งเฉพาะด้านบน */
-  margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 20px;
 }
 
-/* Login */
 .login {
   font-size: 18px;
   font-weight: bold;
@@ -47,14 +42,12 @@ h1 {
   margin: 0;
 }
 
-/* Description */
 .description {
   font-size: 14px;
   color: #777;
-  margin: 10px 0; /* เพิ่มระยะห่างด้านล่าง */
+  margin: 10px 0;
 }
 
-/* Social Media Icons */
 .social-icons img {
   width: 24px;
   height: 24px;
@@ -62,26 +55,24 @@ h1 {
   cursor: pointer;
 }
 
-/* Contact Button */
 .contact-button {
-  background-color: #000000; /* สีดำ */
+  background-color: #000000;
   color: #ffffff;
   border: none;
-  border-radius: 0 0 10px 10px; /* มุมโค้งเฉพาะด้านล่าง */
-  padding: 15px 0; /* ปรับความสูงของปุ่ม */
+  border-radius: 0 0 10px 10px;
+  padding: 15px 0;
   font-size: 16px;
   cursor: pointer;
-  width: 100%; /* กว้างเต็มการ์ด */
-  position: absolute; /* ให้ปุ่มอยู่ด้านล่างของการ์ด */
+  width: 100%;
+  position: absolute;
   left: 0;
   bottom: 0;
 }
 
 .contact-button:hover {
-  background-color: #333333; /* สีดำอ่อนเมื่อ hover */
+  background-color: #333333;
 }
 
-/* Invisible Table */
 table {
   border-collapse: collapse;
   width: 100%;
